@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Layout com Slider Manual</title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body>
+    <div class="iphone">
+        <div class="screen">
+            <!-- Checkbox para controle do slider -->
+            <input type="radio" id="slide1" name="slider" checked>
+            <input type="radio" id="slide2" name="slider">
+
+            <!-- Slider com duas imagens -->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="/images/0-home/slide1.png" alt="Imagem 1">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/0-home/slide2.png" alt="Imagem 2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicadores de páginas -->
+            <div class="pagination">
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Botão redondo para passar a imagem -->
+            <div class="controls">
+                <label for="slide2" id="next1" class="next-button">›</label>
+                <label for="slide1" id="next2" class="next-button hidden">›</label>
+            </div>
+
+            <!-- Texto no topo da tela -->
+            <div class="text-overlay">
+                <h1>PetFinder</h1>
+                <p class="overlay">Adopt the perfect pet of more than 700 animal shelters...</p>
+            </div>
+        </div>
+
+        <div class="notch">
+            <div class="camera"></div>
+            <div class="speaker"></div>
+        </div>
+        <div class="home-button"></div>
+    </div>
+</body>
+</html>

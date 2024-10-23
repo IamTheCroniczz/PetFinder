@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat-bold.ttf') format('truetype');
+    font-weight: bold; 
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat-medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat-regular.ttf') format('truetype');
+    font-weight: normal; 
+}
+
+body {
+    font-family: 'NomeDaFonte', sans-serif;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.iphone {
+    width: 375px;
+    height: 812px;
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Muda para alinhar na parte inferior */
+    background: linear-gradient(to bottom, #536dff8c, #00169681,#001696af); /* Degradê de cores */
+}
+
+/* Oculta os inputs de controle */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do slider */
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    align-items: flex-end; /* Alinha as imagens na parte inferior */
+}
+
+.slide {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha a imagem na parte inferior do slide */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Move o slider baseado nos inputs */
+#slide1:checked ~ .slider .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slider .slides {
+    transform: translateX(-50%);
+}
+
+/* Indicadores de páginas */
+.pagination {
+    position: absolute;
+    top: 20px;  /* Mova para o topo */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #536dff8c;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+#slide1:checked ~ .pagination .dot:nth-child(1) {
+    background-color: #ffffff;
+}
+
+#slide2:checked ~ .pagination .dot:nth-child(2) {
+    background-color: #ffffff;
+}
+
+/* Botões para navegação */
+.controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.next-button {
+    width: 50px;
+    height: 50px;
+    background-color: #536dffda;
+    color: #000000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Esconde o segundo botão até que a página seja trocada */
+.hidden {
+    display: none;
+}
+
+/* Alterna entre os botões de navegação */
+#slide1:checked ~ .controls #next1 {
+    display: flex;
+}
+
+#slide2:checked ~ .controls #next1 {
+    display: none;
+}
+
+#slide2:checked ~ .controls #next2 {
+    display: flex;
+}
+
+#slide1:checked ~ .controls #next2 {
+    display: none;
+}
+/* Texto no overlay */
+.text-overlay {
+    position: absolute;
+    top: 200px; /* Distância do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff; /* Cor do texto */
+}
+
+.text-overlay h1 {
+    font-size: 36px; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.text-overlay p {
+    font-size: 20px; /* Tamanho da descrição */
+    max-width: 300px; /* Largura máxima do texto */
+}
